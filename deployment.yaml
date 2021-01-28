@@ -1,27 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: front-end
   labels:
-    app: my-app
+    app: front-end
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: my-app
+      app: front-end
   template:
     metadata:
       labels:
-        app: my-app
+        app: front-end
     spec:
       containers:
-      - name: simple-node
-        image: gzamorasosa12/simple-node
+      - name: udagram-front-end
+        image: gzamorasosa12/udagram-front-end
         ports:
-        - containerPort: 8080
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 3
-          periodSeconds: 3
+        - containerPort: 4200

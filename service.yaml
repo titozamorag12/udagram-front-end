@@ -2,17 +2,17 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: my-app
-  name: my-app-svc
+    app: front-end
+  name: front-end-svc
   namespace: default
-  selfLink: /api/v1/namespaces/default/services/my-app-svc
+  selfLink: /api/v1/namespaces/default/services/front-end-svc
 spec:
   ports:
-  - port: 8080
+  - port: 8100
     protocol: TCP
-    targetPort: 8080
+    targetPort: 4200
   selector:
-    app: my-app
+    app: front-end
   sessionAffinity: None
   type: ClusterIP
 status:
