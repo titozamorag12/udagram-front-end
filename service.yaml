@@ -8,12 +8,10 @@ metadata:
   selfLink: /api/v1/namespaces/default/services/udagram-front-end-svc
 spec:
   ports:
-  - port: 8100
+  - port: 4200
     protocol: TCP
     targetPort: 4200
   selector:
     app: udagram-front-end
   sessionAffinity: None
-  type: ClusterIP
-status:
-  loadBalancer: {}
+  type: LoadBalancer
